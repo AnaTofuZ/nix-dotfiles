@@ -117,14 +117,12 @@
     packages = with pkgs; [
     #  thunderbird
     ];
-    shell = pkgs.zsh;
   };
 
   programs.git = {
     enable = true;
   };
   programs.starship = { enable = true; };
-  programs.zsh = { enable = true; };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -137,6 +135,7 @@
   environment.systemPackages = with pkgs; [
     vim 
     wget
+    gnome-tweaks
   ];
   environment.variables.EDITOR = "vim";
 

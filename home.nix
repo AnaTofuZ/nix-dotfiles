@@ -23,11 +23,13 @@
      peco
      vim
      bitwarden-desktop
+     slack
   ];
 
   imports = [
     ./git.nix
     ./browser.nix
     ./input-method.nix
+    ./zsh.nix
   ];
 }
