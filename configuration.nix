@@ -138,6 +138,7 @@
     vim 
     wget
   ];
+  environment.variables.EDITOR = "vim";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
