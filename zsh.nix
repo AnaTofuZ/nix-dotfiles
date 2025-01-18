@@ -10,6 +10,7 @@
 	shellAliases = {
 	   gs = "git status";
 	   gc = "git commit";
+	   gp = "git push";
         };
       };
   };
