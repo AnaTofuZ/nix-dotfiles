@@ -22,6 +22,7 @@
      ghq
      peco
      vim
+     bitwarden-desktop
   ];
 
   imports = [
