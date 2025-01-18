@@ -28,5 +28,6 @@
   imports = [
     ./git.nix
     ./browser.nix
+    ./input-method.nix
   ];
 }
