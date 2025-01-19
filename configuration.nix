@@ -27,7 +27,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "resume=UUID=f5ec1ca1-19fe-4f65-a7df-2bca3fa241d8" ];
+  boot.kernelParams = [ "resume=UUID=f5ec1ca1-19fe-4f65-a7df-2bca3fa241d8" "acpi_osi=Linux" "acpi_backlight=vendor" "acpi_sleep=nonvs" ];
 
   networking.hostName = "raddollv2"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -84,8 +84,9 @@
   };
   services.logind.lidSwitch = "suspend-then-hibernate";
   systemd.sleep.extraConfig = ''
-    HibernateDelaySec=20min
+    HibernateDelaySec=2min
   '';
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -117,11 +118,13 @@
     packages = with pkgs; [
     #  thunderbird
     ];
+    shell = pkgs.zsh;
   };
 
   programs.git = {
     enable = true;
   };
+  programs.zsh = { enable = true; };
   programs.starship = { enable = true; };
 
   # Install firefox.
