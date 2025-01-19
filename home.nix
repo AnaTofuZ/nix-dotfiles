@@ -15,6 +15,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+     fd
      bat
      httpie
      ripgrep
@@ -25,7 +26,23 @@
      bitwarden-desktop
      slack
      wezterm
+     jq
+     gojq
+     go-task
   ];
+
+  home.file.".config/peco/config.json" = {
+    text = ''
+      {
+          "Keymap": {
+              "C-j":"peco.SelectDown",
+              "C-k":"peco.SelectUp",
+              "C-d":"peco.ScrollPageDown",
+              "C-b":"peco.ScrollPageUp"
+          }
+      }
+    '';
+  };
 
   imports = [
     ./git.nix

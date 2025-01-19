@@ -11,6 +11,9 @@
 	   gs = "git status";
 	   gc = "git commit";
 	   gp = "git push";
+	   g  = "cd $(ghq root)/$(ghq list | peco)";
+
+	   la = "ls -a";
         };
       };
   };
