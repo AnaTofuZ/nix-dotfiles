@@ -32,5 +32,6 @@
     ./browser.nix
     ./input-method.nix
     ./zsh.nix
+    ./direnv.nix
   ];
 }

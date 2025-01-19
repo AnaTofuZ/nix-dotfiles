@@ -3,6 +3,10 @@
       enable = true;
       userName = "anatofuz";
       userEmail = "anatofuz@gmail.com";
+      extraConfig = {
+         color = { ui = true; };
+         ghq = { root = [ "~/src"]; };
+      }; 
    };
 
    programs.gh = {
