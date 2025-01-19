@@ -24,6 +24,7 @@
      vim
      bitwarden-desktop
      slack
+     wezterm
   ];
 
   imports = [

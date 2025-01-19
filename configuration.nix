@@ -139,6 +139,7 @@
     vim 
     wget
     gnome-tweaks
+    nkf
   ];
   environment.variables.EDITOR = "vim";
 
