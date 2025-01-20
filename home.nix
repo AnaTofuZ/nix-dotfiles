@@ -37,6 +37,7 @@
      emacs
      azure-cli
      xclip
+     tmux
   ];
 
   home.file.".config/peco/config.json" = {

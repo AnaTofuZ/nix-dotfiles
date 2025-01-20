@@ -28,6 +28,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "resume=UUID=f5ec1ca1-19fe-4f65-a7df-2bca3fa241d8" "acpi_osi=Linux" "acpi_backlight=vendor" "acpi_sleep=nonvs" ];
+  boot.kernelModules = [ "evdi" ];
+  boot.kernel.sysctl = {
+     "net.ipv4.ip_unprivileged_port_start" = 0;
+  };
 
   networking.hostName = "raddollv2"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -107,6 +111,7 @@
     #media-session.enable = true;
   };
 
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -114,7 +119,7 @@
   users.users.anatofuz = {
     isNormalUser = true;
     description = "anatofuz";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -189,8 +194,7 @@
      docker = {
         enable = true;
         rootless = {
-	   enable = true;
-           setSocketVariable = true;
+	   enable = false;
         };
      };
   };
@@ -205,6 +209,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
