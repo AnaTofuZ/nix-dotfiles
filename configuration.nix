@@ -145,6 +145,9 @@
     wget
     gnome-tweaks
     nkf
+    mcomix
+    vlc
+    mpv
   ];
   environment.variables.EDITOR = "vim";
 

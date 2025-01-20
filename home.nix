@@ -38,6 +38,10 @@
      azure-cli
      xclip
      tmux
+     xsel
+     mmv-go
+     discord
+     unar
   ];
 
   home.file.".config/peco/config.json" = {
