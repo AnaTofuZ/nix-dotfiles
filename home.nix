@@ -29,6 +29,14 @@
      jq
      gojq
      go-task
+     vscode
+     yq
+     zoom-us
+     kubectl
+     kubelogin
+     emacs
+     azure-cli
+     xclip
   ];
 
   home.file.".config/peco/config.json" = {
