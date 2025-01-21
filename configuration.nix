@@ -148,6 +148,7 @@
     mcomix
     vlc
     mpv
+    logitech-udev-rules
   ];
   environment.variables.EDITOR = "vim";
 
