@@ -22,7 +22,6 @@
      mdcat
      ghq
      peco
-     vim
      bitwarden-desktop
      slack
      wezterm
@@ -63,5 +62,6 @@
     ./input-method.nix
     ./zsh.nix
     ./direnv.nix
+    ./vim.nix
   ];
 }

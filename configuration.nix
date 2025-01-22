@@ -154,6 +154,8 @@
     copyq
     file
     ctop
+    gnome-screenshot
+    moonlight-qt
   ];
   environment.variables.EDITOR = "vim";
 

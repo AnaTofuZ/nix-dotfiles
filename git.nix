@@ -8,6 +8,9 @@
          ghq = { root = [ "~/src"]; };
 	 pull.rebase =  true;
       }; 
+      lfs = {
+         enable = true;
+      };
    };
 
    programs.gh = {
