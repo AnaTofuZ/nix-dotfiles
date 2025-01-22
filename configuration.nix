@@ -150,6 +150,10 @@
     mpv
     logitech-udev-rules
     xclip
+    albert
+    copyq
+    file
+    ctop
   ];
   environment.variables.EDITOR = "vim";
 
