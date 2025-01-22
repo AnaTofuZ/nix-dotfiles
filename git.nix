@@ -6,6 +6,7 @@
       extraConfig = {
          color = { ui = true; };
          ghq = { root = [ "~/src"]; };
+	 pull.rebase =  true;
       }; 
    };
 

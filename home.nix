@@ -36,12 +36,12 @@
      kubelogin
      emacs
      azure-cli
-     xclip
      tmux
      xsel
      mmv-go
      discord
      unar
+     mycli
   ];
 
   home.file.".config/peco/config.json" = {

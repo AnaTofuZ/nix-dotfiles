@@ -149,6 +149,7 @@
     vlc
     mpv
     logitech-udev-rules
+    xclip
   ];
   environment.variables.EDITOR = "vim";
 
