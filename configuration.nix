@@ -144,6 +144,7 @@
     vim 
     wget
     gnome-tweaks
+    gnome-terminal
     nkf
     mcomix
     vlc
@@ -156,6 +157,8 @@
     ctop
     gnome-screenshot
     moonlight-qt
+    libreoffice
+    openvpn
   ];
   environment.variables.EDITOR = "vim";
 
