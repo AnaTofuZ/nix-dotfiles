@@ -6,8 +6,8 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     xremap.url = "github:xremap/nix-flake";
     home-manager = {
-       url = "github:nix-community/home-manager";
-       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -18,24 +18,25 @@
         modules = [
           ./configuration.nix
         ];
-  	specialArgs = {
+        specialArgs = {
           inherit inputs;
         };
       };
     };
     homeConfigurations = {
-       myHome = inputs.home-manager.lib.homeManagerConfiguration {
-         pkgs = import inputs.nixpkgs {
-           system = "x86_64-linux";
-           config.allowUnfree = true;
-         };
-         extraSpecialArgs = {
-           inherit inputs;
-         };
-         modules = [
-           ./home.nix
-         ];
-       };
+      myHome = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = import inputs.nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+        extraSpecialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./home.nix
+        ];
+      };
     };
- };
+    formatter.x86_64-linux = inputs.nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+  };
 }

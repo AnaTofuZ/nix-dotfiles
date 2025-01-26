@@ -2,11 +2,17 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
@@ -18,19 +24,26 @@
       inputs.xremap.nixosModules.default
     ];
 
-
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "resume=UUID=f5ec1ca1-19fe-4f65-a7df-2bca3fa241d8" "acpi_osi=Linux" "acpi_backlight=vendor" "acpi_sleep=nonvs" ];
+  boot.kernelParams = [
+    "resume=UUID=f5ec1ca1-19fe-4f65-a7df-2bca3fa241d8"
+    "acpi_osi=Linux"
+    "acpi_backlight=vendor"
+    "acpi_sleep=nonvs"
+  ];
   boot.kernelModules = [ "evdi" ];
   boot.kernel.sysctl = {
-     "net.ipv4.ip_unprivileged_port_start" = 0;
+    "net.ipv4.ip_unprivileged_port_start" = 0;
   };
 
   networking.hostName = "raddollv2"; # Define your hostname.
@@ -91,7 +104,6 @@
     HibernateDelaySec=2min
   '';
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -111,7 +123,6 @@
     #media-session.enable = true;
   };
 
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -119,9 +130,13 @@
   users.users.anatofuz = {
     isNormalUser = true;
     description = "anatofuz";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
     shell = pkgs.zsh;
   };
@@ -129,8 +144,12 @@
   programs.git = {
     enable = true;
   };
-  programs.zsh = { enable = true; };
-  programs.starship = { enable = true; };
+  programs.zsh = {
+    enable = true;
+  };
+  programs.starship = {
+    enable = true;
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -141,7 +160,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     wget
     gnome-tweaks
     gnome-terminal
@@ -180,36 +199,45 @@
     fontDir.enable = true;
     fontconfig = {
       defaultFonts = {
-        serif = ["Noto Serif CJK JP" "Noto Color Emoji"];
-        sansSerif = ["Noto Sans CJK JP" "Noto Color Emoji"];
-        monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-        emoji = ["Noto Color Emoji"];
+        serif = [
+          "Noto Serif CJK JP"
+          "Noto Color Emoji"
+        ];
+        sansSerif = [
+          "Noto Sans CJK JP"
+          "Noto Color Emoji"
+        ];
+        monospace = [
+          "JetBrainsMono Nerd Font"
+          "Noto Color Emoji"
+        ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };
-  
+
   services.xremap = {
     userName = "anatofuz";
     serviceMode = "system";
     config = {
       modmap = [
- 	{
-           name = "CapsLock to Ctrl";
-           remap = { 
-              CapsLock = "Ctrl_L";
-           };
+        {
+          name = "CapsLock to Ctrl";
+          remap = {
+            CapsLock = "Ctrl_L";
+          };
         }
       ];
     };
   };
 
   virtualisation = {
-     docker = {
-        enable = true;
-        rootless = {
-	   enable = false;
-        };
-     };
+    docker = {
+      enable = true;
+      rootless = {
+        enable = false;
+      };
+    };
   };
 
   # List services that you want to enable:
@@ -222,7 +250,10 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  services.xserver.videoDrivers = [
+    "displaylink"
+    "modesetting"
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
