@@ -15,7 +15,8 @@
       ghq = {
         root = [ "~/src" ];
       };
-      pull.rebase = true;
+      pull.rebase = false;
+      push.default = "current";
     };
     aliases = {
       st = "status";
