@@ -178,6 +178,8 @@
     moonlight-qt
     libreoffice
     openvpn
+    okular
+    foliate
   ];
   environment.variables.EDITOR = "vim";
 
