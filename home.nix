@@ -41,6 +41,7 @@
     discord
     unar
     mycli
+    hub
   ];
 
   home.file.".config/peco/config.json" = {
