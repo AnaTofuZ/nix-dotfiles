@@ -99,6 +99,7 @@
         ltr = "ls -ltr";
         latr = "ls -latr";
 
+        dcr = "docker compose exec rails";
         drspec = "docker compose exec rails bin/rspec";
         drspec-skip-precompile = "docker compose exec -e SKIP_PRECOMPILE=true rails bin/rspec";
       };
