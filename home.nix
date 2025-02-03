@@ -15,33 +15,34 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    fd
+    awscli2
+    azure-cli
     bat
-    httpie
-    ripgrep
-    mdcat
-    ghq
-    peco
     bitwarden-desktop
-    slack
-    wezterm
-    jq
-    gojq
+    discord
+    emacs
+    fd
+    ghq
     go-task
-    vscode
-    yq
-    zoom-us
+    gojq
+    httpie
+    hub
+    jq
     kubectl
     kubelogin
-    emacs
-    azure-cli
-    tmux
-    xsel
+    mdcat
     mmv-go
-    discord
-    unar
     mycli
-    hub
+    peco
+    ripgrep
+    slack
+    tmux
+    unar
+    vscode
+    wezterm
+    xsel
+    yq
+    zoom-us
   ];
 
   home.file.".config/peco/config.json" = {

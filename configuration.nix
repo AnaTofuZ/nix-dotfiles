@@ -160,26 +160,28 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    gnome-tweaks
-    gnome-terminal
-    nkf
-    mcomix
-    vlc
-    mpv
-    logitech-udev-rules
-    xclip
     albert
     copyq
-    file
     ctop
-    gnome-screenshot
-    moonlight-qt
-    libreoffice
-    openvpn
-    okular
+    file
     foliate
+    gnome-screenshot
+    gnome-terminal
+    gnome-tweaks
+    gnomeExtensions.battery-health-charging
+    libreoffice
+    logitech-udev-rules
+    mcomix
+    moonlight-qt
+    mpv
+    nkf
+    okular
+    openvpn
+    tenv
+    vim
+    vlc
+    wget
+    xclip
   ];
   environment.variables.EDITOR = "vim";
 
